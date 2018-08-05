@@ -17,7 +17,7 @@ function init() {
   camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
   camera.position.z = 3;
   // no effect:
-  camera.fov = 60;
+  // camera.fov = 60;
 
 
   /* Scene */
@@ -64,7 +64,7 @@ use .setTexturePath( path ) for texture path
     objLoader.setMaterials(materials);
     objLoader.setPath('./assets/');
     objLoader.load('56-obj.obj', function (object) {
-      // objLoader.scale.set( .5, .5, .5 );
+      object.scale.setScalar(0.01);
       scene.add(object);
     });
   });
