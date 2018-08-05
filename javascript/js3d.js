@@ -13,6 +13,7 @@ function init() {
 
   /* Camera */
 
+  // THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
   camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
   camera.position.z = 3;
 
@@ -47,13 +48,14 @@ use .setTexturePath( path ) for texture path
 
     materials.preload();
 
-    materials.materials.default.map.magFilter = THREE.NearestFilter;
-    materials.materials.default.map.minFilter = THREE.LinearFilter;
+    // materials.materials.default.map.magFilter = THREE.NearestFilter;
+    // materials.materials.default.map.minFilter = THREE.LinearFilter;
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('./assets/');
     objLoader.load('56-obj.obj', function (object) {
+      // objLoader.scale.set( .5, .5, .5 );
       scene.add(object);
     });
   });
