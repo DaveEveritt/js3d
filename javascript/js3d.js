@@ -48,8 +48,14 @@ use .setTexturePath( path ) for texture path
 
     materials.preload();
 
+    // commented out after tip:
+    // https://discourse.threejs.org/t/uncaught-typeerror-cannot-read-property-map-of-undefined/3681/2?u=daveeveritt
     // materials.materials.default.map.magFilter = THREE.NearestFilter;
     // materials.materials.default.map.minFilter = THREE.LinearFilter;
+
+    // How to resize the obj?
+    // var a = new THREE.Vector3( 0.5, 0.5, 0.5 );
+    // https://threejs.org/docs/#api/math/Vector3
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
