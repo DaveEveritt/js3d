@@ -47,23 +47,14 @@ use .setTexturePath( path ) for texture path
   var mtlLoader = new THREE.MTLLoader();
   mtlLoader.setTexturePath('./assets/');
   mtlLoader.setPath('./assets/');
-  mtlLoader.load('56-obj.mtl', function (materials) {
+  mtlLoader.load('56-jar.mtl', function (materials) {
 
     materials.preload();
-
-    // commented out after tip:
-    // https://discourse.threejs.org/t/uncaught-typeerror-cannot-read-property-map-of-undefined/3681/2?u=daveeveritt
-    // materials.materials.default.map.magFilter = THREE.NearestFilter;
-    // materials.materials.default.map.minFilter = THREE.LinearFilter;
-
-    // How to resize the obj?
-    // var a = new THREE.Vector3( 0.5, 0.5, 0.5 );
-    // https://threejs.org/docs/#api/math/Vector3
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('./assets/');
-    objLoader.load('56-obj.obj', function (object) {
+    objLoader.load('56-jar.obj', function (object) {
       object.scale.setScalar(0.01);
       scene.add(object);
     });
